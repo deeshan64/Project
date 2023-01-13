@@ -1,0 +1,48 @@
+.Classes{
+    margin-top: 100px;
+}
+.main{
+    height: 100vh;
+    background-color: rgb(52, 60, 60);   
+    border: 1px rgb(52, 60, 60) solid;   
+}
+.Body{
+   position: relative;
+   margin-top: 150px;
+}
+.item1{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 9px;
+}
+.head{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+   
+}
+.Img{
+    height: 230px;
+    width: 266px;
+    opacity: 0.9;
+}
+@media screen and (max-width:460px){
+    .main{
+        width: 543px;
+        margin-top: -1px;
+        height: 80vh;
+    }
+}
+@media screen and (min-width:461px) {
+    .main{
+        width:218vh;
+    }
+}

@@ -1,0 +1,84 @@
+.Form{
+    border: 1px black solid;
+    width: 500px;
+    height: 450px;
+    justify-content: center;
+    padding: 60px;
+    background-color: rgb(220, 208, 223);
+    border-radius: 7px;
+    box-shadow: 3px 4px 6px 4px;
+    align-items: center;
+    position: relative;
+
+}
+.Body{
+    background-color:rgb(52, 60, 60);
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.Header{
+    font-weight: 700;
+    text-align: center;
+    margin-top: -20px;
+    
+}
+.input{
+    width: 50vh;
+    margin-left: 30px;   
+}
+.btn{
+    margin-left: 150px;
+    background-color: red;
+    color: rgb(1, 1, 1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 6px 9px 1px;
+}
+.bt{
+    margin-left: 98px;
+}
+.btnn{
+    margin-left: 164px;
+}
+.password{
+    width: 50vh; 
+       
+}
+@media screen and (max-width:460px){
+    .Body{
+        height: 165vh;
+        width: 415px;
+        background-color:rgb(52, 60, 60);
+        flex-wrap: wrap;
+       
+    }
+    .Form{
+        height: 80vh;
+        width: 415px;
+        background-color:rgb(186, 205, 205);
+        flex-wrap: wrap;
+        position: absolute;
+        margin-top: 50px;
+    }
+    .input{
+        width: 40vh;
+        margin-left: 0px;
+    }
+    .password{
+        width: 40vh; 
+        position: absolute;   
+    }
+    .btnn{
+        margin-left: 120px;
+    }
+   .btn{
+    margin-left: 100px;
+   }
+   .bt{
+    margin-left: 40px;
+   }
+}
