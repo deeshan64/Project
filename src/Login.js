@@ -1,63 +1,71 @@
+import Form from 'react-bootstrap/Form';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Style from './Log.module.css'
+import { useState } from 'react';
+import { validEmail, validPassword } from './regex.js';
+import { useNavigate } from 'react-router-dom';
 
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import './About.css';
 
-const loginSchema = Yup.object().shape({
-  password: Yup.string()
-    .min(8, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required")
-});
- class LoginForm extends React.Component 
-{
-  handleSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 400);
+function Log() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailErr, setEmailErr] = useState(false);
+  const [pwdError, setPwdError] = useState(false);
+  const navigate = useNavigate()
+  const validate = () => {
+     if (!validEmail.test(email)) {
+        setEmailErr(true);
+     }
+     if (!validPassword.test(password)) {
+        setPwdError(true);
+     }
+     localStorage.setItem("EmailLogin",email)
+     localStorage.setItem("PasswordLogin",password)
+     
+     if(localStorage.getItem('EmailLogin') === localStorage.getItem('EmailRegister') && localStorage.getItem('PasswordLogin') === localStorage.getItem('PasswordRegister') ){
+         alert("Login sucessful ✅")
+         navigate('/')
+
+     }else{
+         alert("Login unsucessful ⚠️")
+     }
+    
   };
 
-   render()
-   {
-    return (
-      <div className="MainDiv">
-       
-        <h1 >Login</h1>
-       
-        <Formik
-          initialValues={{ email: "", password: "" }}
-          validationSchema={loginSchema}
-          onSubmit={this.handleSubmit}
-        >
-          {({ isSubmitting }) => {
-            return (
-              <Form>
-                <label>
-                  Email: <Field type="email" name="email" />
-                  <ErrorMessage name="email" component="div" />
-                </label>
-                <label>
-                  Password:
-                  <Field type="password" name="password" />
-                  <ErrorMessage name="password" component="div" />
-                </label>
-                <button type="submit" disabled={isSubmitting}>
-                  Submit
-                </button>
-              </Form>
-          
-            );
-          }}
-        </Formik>
-        <div>   <p className="logins">
-             Already have an account? <a href="./registration">Registar now</a>
-           </p> </div> 
+  return (
+    <>
+   
+    <div className={Style.Body}>
+    <Form className={Style.Form}>
+      <h1 className={Style.Header}>Login</h1>
+      <div>
+         <input  className={Style.input}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+         />
+         <br/>
+         <br/>
+         <input className={Style.input}
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+         />
+         <br/>
+         <br/>
+
+         <div>
+         <button className={Style.btn} onClick={validate}>Login</button> </div> 
+         <br/>
+         <h6 className={Style.bt}>Don't have account</h6>
+         <h6 className={Style.btnn}><a href="./Registration">Register</a></h6>
       </div>
-    );
-  }
+    </Form>
+    </div>
+    </>
+  );
 }
 
-export default LoginForm;
+export default Log;

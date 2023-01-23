@@ -1,0 +1,42 @@
+.Form{
+  border: 1px black solid;
+  width: 500px;
+  height: 450px;
+  justify-content: center;
+  padding: 60px;
+  background-color: rgb(220, 208, 223);
+  border-radius: 7px;
+  box-shadow: 3px 4px 6px 4px;
+
+}
+.Body{
+  background-color:rgb(52, 60, 60);
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.Header{
+  font-weight: 700;
+  margin-left: 90px;
+  margin-bottom: 10px;
+}
+.input{
+  width: 60vh;
+}
+.btn{
+  margin-left: 150px;
+  background-color: red;
+  color: rgb(1, 1, 1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 6px 9px 1px;
+}
+.bt{
+  margin-left: 98px;
+}
+.btnn{
+  margin-left: 164px;
+}

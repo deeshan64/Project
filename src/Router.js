@@ -12,8 +12,8 @@ function Router() {
    <Routes>
    <Route path='/'  element={<Main/>}/>
    <Route path='/home' element={<Home/>}/>
-    <Route path='/login' element={<Login/>}/>
-    <Route path='/registration' element={<Registration/>}/>
+    <Route path='/Login' element={<Login/>}/>
+    <Route path='/Registration' element={<Registration/>}/>
     <Route path='*' element={<NoPage/>}/>
    </Routes>
    </BrowserRouter>

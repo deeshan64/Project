@@ -13,11 +13,13 @@
  .links{
     display: flex;
     width: 60%;
+
+    text-decoration: none;
    
     color:black;
     justify-content: space-between;
      margin-left: 35vh;
-   /* background-image:url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Fhow-to-add-a-background-image-to-the-top-section-of-your-webpage-with-html&psig=AOvVaw0s84D2bin2T72idROGQ_dw&ust=1673019189929000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNjhj6bgsPwCFQAAAAAdAAAAABAI); */
+   
 } 
  
 .mobile{
